@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<style type="text/css">
+.bf{float:left}
+*{font-size:13px;}
+span{margin-right:30px;}
+a{text-decoration:none;color:#336699;}
+a:hover{text-decoration:underline;color:#cc6600;}
+</style>
+<script src="js/audiojs/audio.js"></script>
+<script src="js/LImageUtil.js"></script>
+<script src="js/english.js"></script>
+<script type="text/javascript">
+<!--
+      audiojs.events.ready(function() {
+        audiojs.createAll();
+      });
+	window.onload=function(){
+		support();
+	}
+	document.oncontextmenu = function (event){
+	if(window.event){
+		event = window.event;
+	}try{
+		var the = event.srcElement;
+		if (!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")){
+			return false;
+		}
+		return true;
+	}catch (e){
+		return false; 
+	} 
+}
+
+//-->
+</script>
+</head>
+<body>
+
+
+<div style="display:none">
+	<audio src="" id="say" preload="none" ></audio>
+</div>
+
+	<h3>《小学英语》课题实验模块一听说检测题</h3>
+	<div id="part1">
+		一、单词选择：请根据图片提示读出正确的单词
+		<ol>
+			<li>
+				<img src="images/part1/miss.jpg" onload="javascript:resizeimg(this,100,150)"/>
+				<span>morning</span>
+				<span id="missTrue">miss</span>
+				<span>name</span>
+				<input type="text" class="text" name="miss" id="miss"  autocomplete="off" x-webkit-speech x-webkit-grammar="builtin:translate" onwebkitspeechchange="check('miss')" lang="en-US" />
+				<a href="javascript:" onclick="check('miss')" >check</a>
+			</li>
+			
+			<li>
+				<img src="images/part1/number.jpg" onload="javascript:resizeimg(this,100,150)"/>
+				<span id="numberTrue">number</span>
+				<span>zero</span>
+				<span>what</span>
+				<input type="text" class="text"  id="number"  autocomplete="off" x-webkit-speech x-webkit-grammar="builtin:translate" onwebkitspeechchange="check('number')" lang="en-US"/>
+				<a href="javascript:" onclick="check('number')">check</a>
+			</li>
+		</ol>
+	</div>
+
+	<div id="part2">
+		二、句子跟读：请跟读你所听到的句子
+		<ol>
+			<li>
+			<audio src="say/hello.mp3" preload="none"></audio>
+			<input type="text" class="text" id="hello"  autocomplete="off" x-webkit-speech x-webkit-grammar="builtin:translate" onwebkitspeechchange="check('hello')" lang="en-US"/>		
+			<span id="helloTrue" style="display:none;">hello</span>
+			<a href="javascript:" onclick="check('hello')">check</a>
+			</li>
+			<li>
+				<audio src="say/thankyou.mp3" preload="none"></audio>
+				<input type="text" class="text" id="thank"  autocomplete="off" x-webkit-speech x-webkit-grammar="builtin:translate" onwebkitspeechchange="check('thank')" lang="en-US"/>	
+				<span id="thankTrue" style="display:none;">thank you</span>
+				<a href="javascript:" onclick="check('thank')">check</a>
+			</li>
+
+		</ol>
+		
+	</div>
+
+	<div id="part3">
+		三、看图说话：请根据图片和语音提示，读出正确的句子
+		<ol>
+			<li>
+				<img src="images/part3/imsandy.png" onload="javascript:resizeimg(this,100,150)"/>
+				<span id="sandyTrue">Hello I'm Sandy</span>
+				<span>This is Sandy</span>
+				<input type="text" class="text"  id="sandy"  autocomplete="off" x-webkit-speech x-webkit-grammar="builtin:translate" onwebkitspeechchange="check('sandy')" lang="en-US" />
+				<a href="javascript:" onclick="check('sandy')">check</a>
+			</li>
+			<li>
+				<img src="images/part3/phoneBook.png" onload="javascript:resizeimg(this,100,150)"/>
+				<span id="phoneBookTrue">This is my phone book</span>
+				<span>What's your name</span>
+				<input type="text" class="text" id="phoneBook"  autocomplete="off" x-webkit-speech x-webkit-grammar="builtin:translate" onwebkitspeechchange="check('phoneBook')" lang="en-US"/>
+				<a href="javascript:" onclick="check('phoneBook')">check</a>
+			</li>
+		</ol>
+
+	</div>
+
+	<div id="part4">
+	四、回答问题：根据你听到的句子，读出正确的应答语
+		<ol>
+			<li>
+				<audio src="say/morning.mp3" preload="none"></audio>
+				<span  id="morningTrue">Good morning</span>
+				<span>Yes, I’m Tony</span>
+				<span>Good afternoon!</span>	
+			<input type="text" class="text" id="morning"  autocomplete="off" x-webkit-speech x-webkit-grammar="builtin:translate" onwebkitspeechchange="check('morning')" lang="en-US" />
+			<a href="javascript:" onclick="check('morning')">check</a>
+			</li>
+
+			<li>
+				<audio src="say/name.mp3" preload="none"></audio>
+				<span id="yourNameTrue">Tom</span>
+				<span>Hello! Tom</span>
+				<span>This is Tom</span>	
+			<input type="text" class="text" name="I’m Li Yan" id="yourName"  autocomplete="off" x-webkit-speech x-webkit-grammar="builtin:translate" onwebkitspeechchange="check('yourName')" lang="en-US"/>
+			<a href="javascript:" onclick="check('yourName')">check</a>
+			</li>
+		</ol>
+	</div>
+</body>
+</html>
